@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BINARY CYBER | Security Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', 'Orbitron', monospace;
+        }
+
+        :root {
+            --cyber-teal: #00ffcc;
+            --cyber-blue: #0099ff;
+            --cyber-purple: #9966ff;
+            --cyber-red: #ff3366;
+            --dark-bg: #0a0a12;
+            --darker-bg: #050508;
+            --card-bg: rgba(20, 20, 40, 0.9);
+            --neon-glow: 0 0 15px currentColor;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* FAST Binary Wave Animation Background */
+        .binary-waves {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 255, 204, 0.03) 2px,
+                    rgba(0, 255, 204, 0.03) 4px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(153, 102, 255, 0.03) 2px,
+                    rgba(153, 102, 255, 0.03) 4px
+                );
+            overflow: hidden;
+        }
+
+        .binary-stream {
+            position: absolute;
+            font-family: 'Courier New', monospace;
+            font-weight: 900;
+            font-size: 28px; /* Slightly larger */
+            white-space: nowrap;
+            color: var(--cyber-teal);
+            text-shadow: 0 0 15px var(--cyber-teal); /* Stronger glow */
+            opacity: 0.8;
+            animation: binaryFlow linear infinite;
+        }
+
+        /* MUCH FASTER ANIMATION - 3x faster! */
+        @keyframes binaryFlow {
+            0% {
+                transform: translateY(-100%) translateX(-200px);
+            }
+            100% {
+                transform: translateY(100vh) translateX(200px);
+            }
+        }
+
+        /* Binary Grid Pattern - Faster */
+        .binary-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(
+                    circle at 25% 25%,
+                    rgba(0, 255, 204, 0.08) 2px,
+                    transparent 2px
+                ),
+                radial-gradient(
+                    circle at 75% 75%,
+                    rgba(153, 102, 255, 0.08) 2px,
+                    transparent 2px
+                );
+            background-size: 80px 80px; /* Tighter grid */
+            z-index: -1;
+            opacity: 0.4;
+            animation: gridMove 20s linear infinite; /* Grid animation */
+        }
+
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 80px 80px; }
+        }
+
+        /* FASTER Pulsing Binary Dots */
+        .binary-dots {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .binary-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--cyber-teal);
+            box-shadow: 0 0 15px var(--cyber-teal);
+            animation: binaryPulse 1s infinite alternate; /* Faster pulse */
+        }
+
+        @keyframes binaryPulse {
+            0% { opacity: 0.2; transform: scale(0.3); }
+            100% { opacity: 1; transform: scale(1.8); }
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 10, 20, 0.95);
+            padding: 25px 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 2px solid var(--cyber-teal);
+            box-shadow: 
+                0 10px 30px rgba(0, 255, 204, 0.3),
+                inset 0 0 20px rgba(0, 255, 204, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .binary-logo {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: transparent;
+            background: linear-gradient(45deg, var(--cyber-teal), var(--cyber-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            position: relative;
+            letter-spacing: 3px;
+        }
+
+        .binary-logo::before {
+            content: '01001000 01001001';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            color: var(--cyber-blue);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .nav-binary {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            background: rgba(0, 255, 204, 0.1);
+            border: 1px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            font-weight: 600;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(0, 255, 204, 0.4), 
+                transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-item:hover::before {
+            left: 100%;
+        }
+
+        .nav-item:hover {
+            background: rgba(0, 255, 204, 0.2);
+            border-color: var(--cyber-teal);
+            box-shadow: 0 0 20px var(--cyber-teal);
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 30px;
+            margin-bottom: 60px;
+            background: rgba(15, 15, 30, 0.8);
+            border-radius: 20px;
+            border: 3px solid transparent;
+            border-image: linear-gradient(45deg, var(--cyber-teal), var(--cyber-blue), var(--cyber-purple)) 1;
+            position: relative;
+            overflow: hidden;
+            animation: heroGlow 3s infinite alternate;
+        }
+
+        @keyframes heroGlow {
+            0% { box-shadow: 0 0 40px rgba(0, 255, 204, 0.3); }
+            100% { box-shadow: 0 0 60px rgba(153, 102, 255, 0.4); }
+        }
+
+        .hero::before {
+            content: '0011001100 0011001100 0011001100';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            color: rgba(0, 255, 204, 0.1);
+            font-size: 1.2rem;
+            letter-spacing: 10px;
+            font-weight: 900;
+            animation: textScroll 20s linear infinite;
+        }
+
+        @keyframes textScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .binary-name {
+            font-size: 5rem;
+            font-weight: 1000;
+            color: transparent;
+            background: linear-gradient(
+                45deg,
+                var(--cyber-teal) 0%,
+                var(--cyber-blue) 33%,
+                var(--cyber-purple) 66%,
+                var(--cyber-red) 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            margin-bottom: 30px;
+            letter-spacing: 8px;
+            position: relative;
+            display: inline-block;
+            animation: nameShimmer 3s infinite alternate;
+        }
+
+        @keyframes nameShimmer {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .binary-name::after {
+            content: 'CYBER_SECURITY';
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: var(--cyber-blue);
+            letter-spacing: 4px;
+            opacity: 0.8;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.3; }
+        }
+
+        .cyber-tagline {
+            font-size: 1.8rem;
+            color: var(--cyber-teal);
+            margin-bottom: 40px;
+            text-shadow: var(--neon-glow);
+            animation: taglinePulse 2s infinite alternate;
+        }
+
+        @keyframes taglinePulse {
+            0% { text-shadow: 0 0 10px var(--cyber-teal); }
+            100% { text-shadow: 0 0 25px var(--cyber-purple); }
+        }
+
+        /* Content Cards */
+        .content-section {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 60px;
+            border: 2px solid rgba(0, 255, 204, 0.3);
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5),
+                inset 0 0 30px rgba(0, 255, 204, 0.05);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyber-teal);
+            box-shadow: 
+                0 30px 60px rgba(0, 255, 204, 0.2),
+                inset 0 0 40px rgba(0, 255, 204, 0.1);
+        }
+
+        /* Section Headers */
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--cyber-blue);
+            margin-bottom: 40px;
+            padding-left: 20px;
+            border-left: 5px solid var(--cyber-teal);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-shadow: var(--neon-glow);
+        }
+
+        .section-title i {
+            color: var(--cyber-purple);
+            animation: binaryBlink 1s infinite; /* Faster blink */
+        }
+
+        @keyframes binaryBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Binary Counter - Faster */
+        .binary-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--cyber-teal);
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            animation: counterUpdate 5s infinite linear; /* Faster update */
+        }
+
+        @keyframes counterUpdate {
+            0% { content: '00000000'; }
+            100% { content: '11111111'; }
+        }
+
+        /* Objective */
+        .objective-text {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.95);
+            text-align: justify;
+            padding: 30px;
+            background: rgba(0, 40, 80, 0.3);
+            border-radius: 15px;
+            border-left: 4px solid var(--cyber-purple);
+            position: relative;
+            animation: textGlow 4s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { box-shadow: inset 0 0 10px rgba(0, 255, 204, 0.1); }
+            100% { box-shadow: inset 0 0 20px rgba(153, 102, 255, 0.2); }
+        }
+
+        .objective-text::before {
+            content: '01101111 01100010 01101010 01100101 01100011 01110100 01101001 01110110 01100101';
+            position: absolute;
+            top: -25px;
+            left: 30px;
+            color: var(--cyber-blue);
+            font-size: 0.9rem;
+            opacity: 0.7;
+            animation: binaryScroll 15s linear infinite; /* Faster scroll */
+        }
+
+        @keyframes binaryScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: rgba(0, 30, 60, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 204, 0.2);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '00110011';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: rgba(0, 255, 204, 0.3);
+            font-family: 'Courier New', monospace;
+            animation: skillBinary 3s infinite;
+        }
+
+        @keyframes skillBinary {
+            0%, 100% { content: '00110011'; }
+            25% { content: '11001100'; }
+            50% { content: '10101010'; }
+            75% { content: '01010101'; }
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--cyber-teal);
+            box-shadow: 0 20px 40px rgba(0, 255, 204, 0.3);
+            animation: skillHover 0.5s;
+        }
+
+        @keyframes skillHover {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-12px) scale(1.04); }
+            100% { transform: translateY(-8px) scale(1.02); }
+        }
+
+        .skill-card h3 {
+            color: var(--cyber-teal);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Education & Interests */
+        .edu-interest-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .edu-box, .interest-box {
+            background: rgba(10, 20, 40, 0.7);
+            padding: 35px;
+            border-radius: 15px;
+            border: 2px solid rgba(153, 102, 255, 0.3);
+            position: relative;
+            animation: boxFloat 6s infinite alternate;
+        }
+
+        @keyframes boxFloat {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        .edu-box::before, .interest-box::before {
+            content: '01000101 01000100 01010101';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--dark-bg);
+            padding: 0 10px;
+            color: var(--cyber-blue);
+            font-size: 0.9rem;
+            font-family: 'Courier New', monospace;
+            animation: eduBinary 4s infinite;
+        }
+
+        @keyframes eduBinary {
+            0%, 100% { content: '01000101 01000100 01010101'; }
+            50% { content: '01000100 01010101 01000011'; }
+        }
+
+        .interest-box::before {
+            content: '01001001 01001110 01010100 01000101 01010010 01000101 01010011 01010100';
+            animation: interestBinary 4s infinite;
+        }
+
+        @keyframes interestBinary {
+            0%, 100% { content: '01001001 01001110 01010100 01000101 01010010 01000101 01010011 01010100'; }
+            50% { content: '01001001 01001110 01010100 01000101 01010010 01000101 01010011 01010100'; }
+        }
+
+        .edu-item, .interest-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 2px dotted rgba(0, 255, 204, 0.3);
+            animation: itemAppear 0.5s ease-out;
+        }
+
+        @keyframes itemAppear {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .edu-item:last-child, .interest-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .edu-item h3, .interest-item h3 {
+            color: var(--cyber-blue);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            animation: titleColor 3s infinite alternate;
+        }
+
+        @keyframes titleColor {
+            0% { color: var(--cyber-blue); }
+            100% { color: var(--cyber-teal); }
+        }
+
+        /* Projects */
+        .projects-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+        }
+
+        .project-binary {
+            background: rgba(20, 10, 40, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            border-image: linear-gradient(45deg, var(--cyber-teal), var(--cyber-purple)) 1;
+            transition: all 0.4s;
+            position: relative;
+            animation: projectFloat 8s infinite alternate;
+        }
+
+        @keyframes projectFloat {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-15px); }
+        }
+
+        .project-binary:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 
+                0 40px 80px rgba(0, 255, 204, 0.4),
+                0 0 60px rgba(153, 102, 255, 0.4);
+            animation: none;
+        }
+
+        .project-header {
+            background: linear-gradient(90deg, 
+                rgba(0, 255, 204, 0.2), 
+                rgba(153, 102, 255, 0.2));
+            padding: 30px;
+            border-bottom: 3px solid var(--cyber-teal);
+            animation: headerGlow 2s infinite alternate;
+        }
+
+        @keyframes headerGlow {
+            0% { background: linear-gradient(90deg, rgba(0, 255, 204, 0.2), rgba(153, 102, 255, 0.2)); }
+            100% { background: linear-gradient(90deg, rgba(153, 102, 255, 0.2), rgba(0, 255, 204, 0.2)); }
+        }
+
+        .project-header h3 {
+            color: #ffffff;
+            font-size: 1.6rem;
+            text-shadow: var(--neon-glow);
+        }
+
+        .project-body {
+            padding: 30px;
+        }
+
+        .binary-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .tech-binary {
+            background: rgba(0, 255, 204, 0.15);
+            color: var(--cyber-teal);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+            animation: techPulse 2s infinite alternate;
+        }
+
+        @keyframes techPulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .tech-binary:hover {
+            background: rgba(0, 255, 204, 0.3);
+            transform: scale(1.2);
+            box-shadow: 0 0 25px var(--cyber-teal);
+            animation: none;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+        }
+
+        .contact-node {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 35px;
+            background: rgba(0, 30, 60, 0.7);
+            border-radius: 20px;
+            border: 2px solid transparent;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            animation: contactNode 6s infinite alternate;
+        }
+
+        @keyframes contactNode {
+            0% { border-color: transparent; }
+            100% { border-color: rgba(0, 255, 204, 0.5); }
+        }
+
+        .contact-node:hover {
+            transform: translateY(-12px) scale(1.05);
+            border-color: var(--cyber-teal);
+            box-shadow: 0 25px 50px rgba(0, 255, 204, 0.4);
+            animation: none;
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, var(--cyber-teal), var(--cyber-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 0 40px var(--cyber-teal);
+            animation: iconRotate 10s infinite linear;
+        }
+
+        @keyframes iconRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(5, 5, 15, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 50px 40px;
+            margin-top: 80px;
+            border-radius: 25px 25px 0 0;
+            border-top: 3px solid var(--cyber-teal);
+            position: relative;
+            animation: footerGlow 3s infinite alternate;
+        }
+
+        @keyframes footerGlow {
+            0% { border-top-color: var(--cyber-teal); }
+            100% { border-top-color: var(--cyber-purple); }
+        }
+
+        .footer-binary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.2rem;
+            animation: lineAppear 0.8s ease-out;
+        }
+
+        @keyframes lineAppear {
+            0% { opacity: 0; transform: translateX(-20px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        .contact-line i {
+            color: var(--cyber-teal);
+            font-size: 1.5rem;
+            width: 40px;
+            animation: iconPulse 2s infinite alternate;
+        }
+
+        @keyframes iconPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+
+        .social-binary {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(0, 255, 204, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--cyber-teal);
+            transition: all 0.4s;
+            border: 2px solid transparent;
+            animation: socialFloat 3s infinite alternate;
+        }
+
+        @keyframes socialFloat {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        .social-icon:hover {
+            background: rgba(0, 255, 204, 0.3);
+            transform: translateY(-15px) rotate(20deg);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 15px 40px var(--cyber-teal);
+            animation: none;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 255, 204, 0.3);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            animation: copyrightGlow 4s infinite alternate;
+        }
+
+        @keyframes copyrightGlow {
+            0% { color: rgba(255, 255, 255, 0.7); }
+            100% { color: var(--cyber-teal); }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .binary-name {
+                font-size: 4rem;
+            }
+            
+            .projects-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-main {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            .nav-binary {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .binary-name {
+                font-size: 2.8rem;
+                letter-spacing: 4px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .edu-interest-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Loading Animation - Faster */
+        .binary-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-binary {
+            color: var(--cyber-teal);
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 30px;
+            animation: binaryLoad 1s infinite; /* Faster loading */
+        }
+
+        @keyframes binaryLoad {
+            0%, 100% { content: '00011001100'; }
+            25% { content: '00110011001'; }
+            50% { content: '01100110011'; }
+            75% { content: '11001100110'; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="binary-loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-binary">00011001100</div>
+            <div style="color: var(--cyber-blue); font-size: 1.5rem; animation: loadText 2s infinite;">
+                INITIALIZING BINARY SYSTEM...
+            </div>
+        </div>
+    </script>
+        </div>
+    </div>
+
+    <!-- Binary Wave Background -->
+    <div class="binary-waves" id="binaryWaves"></div>
+    <div class="binary-grid"></div>
+    <div class="binary-dots" id="binaryDots"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <nav class="nav-main">
+                <div class="binary-logo">BINARY_CYBER</div>
+                <div class="nav-binary">
+                    <a href="#home" class="nav-item">HOME</a>
+                    <a href="#objective" class="nav-item">OBJECTIVE</a>
+                    <a href="#skills" class="nav-item">SKILLS</a>
+                    <a href="#education" class="nav-item">EDUCATION</a>
+                    <a href="#projects" class="nav-item">PROJECTS</a>
+                    <a href="#contact" class="nav-item">CONTACT</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <h1 class="binary-name">VASU R</h1>
+            <h2 class="cyber-tagline">BINARY SECURITY SPECIALIST & THREAT ANALYST</h2>
+            <p style="font-size: 1.3rem; max-width: 900px; margin: 0 auto; line-height: 1.8;">
+                Expert in binary analysis, reverse engineering, and low-level system security. 
+                Specializing in malware analysis, exploit development, and secure coding practices.
+            </p>
+        </section>
+
+        <!-- Objective -->
+        <section class="content-section" id="objective">
+            <div class="binary-counter">01010101</div>
+            <h2 class="section-title"><i class="fas fa-bullseye"></i> CAREER OBJECTIVE</h2>
+            <div class="objective-text">
+                To secure a position as a Binary Security Analyst where I can apply my expertise in 
+                assembly language, reverse engineering, and exploit development to analyze and mitigate 
+                sophisticated cyber threats. With a deep understanding of low-level system architecture 
+                and binary exploitation techniques, I aim to contribute to advanced threat intelligence 
+                and vulnerability research. Passionate about developing innovative security solutions 
+                that protect critical systems at the binary level while advancing the field through 
+                research in advanced persistent threats and zero-day vulnerabilities.
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="content-section" id="skills">
+            <div class="binary-counter">01110011</div>
+            <h2 class="section-title"><i class="fas fa-code"></i> TECHNICAL SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3><i class="fas fa-microchip"></i> LOW-LEVEL PROGRAMMING</h3>
+                    <p>Assembly (x86/x64/ARM) • C/C++ • Rust • Reverse Engineering • Debugging (GDB, WinDbg)</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-bug"></i> EXPLOIT DEVELOPMENT</h3>
+                    <p>Buffer Overflows • ROP Chains • Shellcoding • Kernel Exploits • Fuzzing • Binary Patching</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-shield-alt"></i> MALWARE ANALYSIS</h3>
+                    <p>Static/Dynamic Analysis • Sandboxing • IDA Pro • Ghidra • OllyDbg • x64dbg • Volatility</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-network-wired"></i> BINARY SECURITY</h3>
+                    <p>ELF/PE Analysis • Packers/Unpackers • Anti-Reversing • Code Obfuscation • Memory Forensics</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-tools"></i> SECURITY TOOLS</h3>
+                    <p>Radare2 • Binary Ninja • Hopper • PE-bear • Sysinternals • Process Monitor • Wireshark</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-brain"></i> ADVANCED CONCEPTS</h3>
+                    <p>Virtualization Security • Hypervisor Exploits • Secure Boot • TPM • Hardware Security</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Interests -->
+        <section class="content-section" id="education">
+            <div class="binary-counter">01100101</div>
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> EDUCATION & AREA OF INTEREST</h2>
+            <div class="edu-interest-container">
+                <div class="edu-box">
+                    <h3 style="color: var(--cyber-teal); font-size: 1.8rem; margin-bottom: 25px;">
+                        EDUCATION
+                    </h3>
+                    <div class="edu-item">
+                        <h3>B.E. in Cyber security Engineering</h3>
+                        <p><i class="far fa-calendar"></i> 2024 - 2028 | Shree Venkateshwara hi tech engineering college</p>
+                        <p> Anna University|GPA: 7.00</p>
+                    </div>
+                    
+                    <div class="edu-item">
+                        <h3>Certifications</h3>
+                        <p>• OSCP (Offensive Security Certified Professional)</p>
+                        <p>• GXPN (GIAC Exploit Researcher and Advanced Penetration Tester)</p>
+                        <p>• GREM (GIAC Reverse Engineering Malware)</p>
+                        <p>• Binary Analysis & Exploitation Certifications</p>
+                    </div>
+                </div>
+                
+                <div class="interest-box">
+                    <h3 style="color: var(--cyber-teal); font-size: 1.8rem; margin-bottom: 25px;">
+                        AREA OF INTEREST
+                    </h3>
+                    <div class="interest-item">
+                        <h3>Binary Diffing & Patching</h3>
+                        <p>Comparative analysis of binary files and security patch analysis</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3>Firmware Reverse Engineering</h3>
+                        <p>Analyzing and securing embedded system firmware</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3>Game Hacking & Anti-Cheat</h3>
+                        <p>Security mechanisms in gaming and anti-cheat bypass analysis</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3>DRM & Software Protection</h3>
+                        <p>Digital rights management and software copy protection</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3>Mobile Binary Analysis</h3>
+                        <p>iOS/Android binary security and mobile malware analysis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="content-section" id="projects">
+            <div class="binary-counter">01110000</div>
+            <h2 class="section-title"><i class="fas fa-project-diagram"></i> BINARY SECURITY PROJECTS</h2>
+            <div class="projects-showcase">
+                <div class="project-binary">
+                    <div class="project-header">
+                        <h3>ADVANCED BINARY EXPLOITATION FRAMEWORK</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Developed a comprehensive framework for automated binary vulnerability discovery and exploit generation. Features include automated ROP chain generation, shellcode polymorphism, and binary diffing capabilities. The framework supports multiple architectures and can identify complex vulnerability patterns in compiled binaries.</p>
+                        <div class="binary-tech">
+                            <span class="tech-binary">Python</span>
+                            <span class="tech-binary">Assembly</span>
+                            <span class="tech-binary">C++</span>
+                            <span class="tech-binary">Capstone</span>
+                            <span class="tech-binary">Keystone</span>
+                            <span class="tech-binary">Angr</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-binary">
+                    <div class="project-header">
+                        <h3>MALWARE BEHAVIORAL ANALYSIS SANDBOX</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Built a sophisticated sandbox environment for dynamic malware analysis with kernel-level monitoring. The system tracks API calls, registry modifications, network activity, and file system changes. Includes automated YARA rule generation and behavioral classification algorithms to identify malware families and attack patterns.</p>
+                        <div class="binary-tech">
+                            <span class="tech-binary">C</span>
+                            <span class="tech-binary">Python</span>
+                            <span class="tech-binary">VirtualBox</span>
+                            <span class="tech-binary">Volatility</span>
+                            <span class="tech-binary">YARA</span>
+                            <span class="tech-binary">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="content-section" id="contact">
+            <div class="binary-counter">01100011</div>
+            <h2 class="section-title"><i class="fas fa-id-card"></i> CONTACT INFORMATION</h2>
+            <div class="contact-grid">
+                <div class="contact-node">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--cyber-teal); font-size: 1.6rem;">PHONE</h3>
+                        <p style="font-size: 1.4rem; margin: 10px 0;">7904026422</p>
+                        <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Secure line available</p>
+                    </div>
+                </div>
+                
+                <div class="contact-node">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--cyber-teal); font-size: 1.6rem;">EMAIL</h3>
+                        <p style="font-size: 1.4rem; margin: 10px 0;"></p> vasurajamanickam4@gmail.com
+
+                    </div>
+                </div>
+                
+                <div class="contact-node">
+                    <div class="contact-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--cyber-teal); font-size: 1.6rem;">LOCATION</h3>
+                        <p style="font-size: 1.4rem; margin: 10px 0;">Shree Venkateshwara hi tech engineering college</p>
+                        <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Erode, Tamil Nadu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-binary">
+            <div>
+                <h3 style="color: var(--cyber-teal); font-size: 2rem; margin-bottom: 20px;">
+                    BINARY CYBER PORTFOLIO
+                </h3>
+                <p style="font-size: 1.1rem; line-height: 1.6;">
+                    Specializing in binary analysis, reverse engineering, 
+                    and low-level system security research.
+                </p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-line">
+                    <i class="fas fa-phone"></i>
+                    <span>7904026422</span>
+                </div>
+                <div class="contact-line">
+                    <i class="fas fa-envelope"></i>
+                    <span>vasurajamanickam4@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="social-binary">
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-stack-overflow"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-hackerrank"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-keybase"></i></a>
+        </div>
+        
+        <div class="copyright">
+            01000010 01001001 01001110 01000001 01010010 01011001 00100000 01010000 01001111 01010010 01010100 01000110 01001111 01001100 01001001 01001111
+        </div>
+    </footer>
+
+    <script>
+        // Hide loading screen faster
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loader').style.display = 'none';
+                }, 500);
+            }, 1500); // Faster loading
+        });
+
+        // Create FASTER binary wave animation
+        function createBinaryWaves() {
+            const container = document.getElementById('binaryWaves');
+            const binaryPattern = '00011001100';
+            
+            // Create MORE streams for faster effect
+            for (let i = 0; i < 30; i++) { // Increased from 20 to 30
+                const stream = document.createElement('div');
+                stream.className = 'binary-stream';
+                
+                // Create longer binary strings
+                let binaryString = '';
+                for (let j = 0; j < 15; j++) { // More repetitions
+                    binaryString += binaryPattern + ' ';
+                }
+                
+                stream.textContent = binaryString;
+                stream.style.left = `${Math.random() * 120}%`; // Wider distribution
+                stream.style.animationDuration = `${Math.random() * 5 + 8}s`; // MUCH FASTER: 8-13s instead of 30-50s
+                stream.style.animationDelay = `${Math.random() * 3}s`;
+                stream.style.fontSize = `${Math.random() * 12 + 20}px`;
+                stream.style.opacity = Math.random() * 0.5 + 0.4;
+                
+                // Random color
+                const colors = ['#00ffcc', '#0099ff', '#9966ff', '#ff3366'];
+                stream.style.color = colors[Math.floor(Math.random() * colors.length)];
+                stream.style.textShadow = `0 0 20px ${colors[Math.floor(Math.random() * colors.length)]}`;
+                
+                container.appendChild(stream);
+            }
+        }
+
+        // Create MORE binary dots
+        function createBinaryDots() {
+            const container = document.getElementById('binaryDots');
+            
+            for (let i = 0; i < 80; i++) { // Increased from 50 to 80
+                const dot = document.createElement('div');
+                dot.className = 'binary-dot';
+                
+                dot.style.left = `${Math.random() * 100}%`;
+                dot.style.top = `${Math.random() * 100}%`;
+                dot.style.animationDuration = `${Math.random() * 1 + 0.5}s`; // Faster pulse
+                dot.style.animationDelay = `${Math.random() * 1}s`;
+                
+                // Random color
+                const colors = ['#00ffcc', '#0099ff', '#9966ff', '#ff3366'];
+                dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+                dot.style.boxShadow = `0 0 20px ${colors[Math.floor(Math.random() * colors.length)]}`;
+                
+                container.appendChild(dot);
+            }
+        }
+
+        // Update binary counters faster
+        function updateBinaryCounters() {
+            const counters = document.querySelectorAll('.binary-counter');
+            counters.forEach(counter => {
+                let binary = '';
+                for (let i = 0; i < 16; i++) { // Longer binary strings
+                    binary += Math.round(Math.random());
+                }
+                counter.textContent = binary;
+            });
+        }
+
+        // Add more animations
+        function addFloatingEffects() {
+            const elements = document.querySelectorAll('.skill-card, .project-binary, .contact-node');
+            elements.forEach(el => {
+                el.addEventListener('mouseenter', function() {
+                    this.style.animation = 'none';
+                    this.style.transform = 'translateY(-15px) scale(1.05)';
+                });
+                
+                el.addEventListener('mouseleave', function() {
+                    this.style.animation = '';
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createBinaryWaves();
+            createBinaryDots();
+            
+            // Update counters every 1 second (faster)
+            setInterval(updateBinaryCounters, 1000);
+            
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add faster typing animation to name
+            const nameElement = document.querySelector('.binary-name');
+            const originalText = nameElement.textContent;
+            nameElement.textContent = '';
+            
+            let charIndex = 0;
+            function typeBinaryName() {
+                if (charIndex < originalText.length) {
+                    nameElement.textContent += originalText.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeBinaryName, 50); // Faster typing
+                }
+            }
+            
+            setTimeout(typeBinaryName, 500);
+            
+            // Add hover effects
+            addFloatingEffects();
+            
+            // Add random binary flashes
+            setInterval(() => {
+                const randomElements = document.querySelectorAll('.skill-card, .tech-binary');
+                if (randomElements.length > 0) {
+                    const randomElement = randomElements[Math.floor(Math.random() * randomElements.length)];
+                    randomElement.style.boxShadow = '0 0 30px #00ffcc';
+                    setTimeout(() => {
+                        randomElement.style.boxShadow = '';
+                    }, 300);
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
